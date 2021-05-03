@@ -1,0 +1,44 @@
+{
+  "name": "monday-example-app-word-cloud",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run stop && concurrently \"npm run server\" \"npm run expose\"",
+    "server": "react-scripts start",
+    "build": "react-scripts build",
+    "expose": "ngrok http 8303",
+    "stop": "kill-port 8303 && kill-port 4049 && kill-port 4040"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "lodash": "^4.17.15",
+    "monday-sdk-js": "^0.1.2",
+    "react": "^16.10.2",
+    "react-chartjs-2": "^3.0.3",
+    "react-d3-cloud": "^0.7.0",
+    "react-dom": "^16.10.2",
+    "react-donut-chart": "^1.1.8",
+    "react-scripts": "^4.0.3",
+    "react-wordcloud": "^1.1.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.2",
+    "cross-port-killer": "^1.2.1",
+    "ngrok": "^3.2.7"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
